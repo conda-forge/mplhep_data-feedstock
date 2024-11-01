@@ -10,7 +10,7 @@ source:
   sha256: cd1f3ad3af9dbff33aef9e7406d2130d624a0bd1d5aa5970fc713a6421165a4e
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -19,6 +19,7 @@ requirements:
     - python >=3.7
     - pip
     - setuptools
+    - setuptools_scm
   run:
     - python >=3.7
 
