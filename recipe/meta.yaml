@@ -26,6 +26,11 @@ requirements:
 test:
   imports:
     - mplhep_data
+  commands:
+    - pip check
+    - pip show mplhep_data | grep "{{ version }}"
+  requires:
+    - pip
 
 about:
   home: https://github.com/scikit-hep/mplhep_data
