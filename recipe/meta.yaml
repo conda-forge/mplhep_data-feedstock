@@ -1,5 +1,5 @@
 {% set name = "mplhep_data" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b54d257f3f53c93a442cda7a6681ce267277e09173c0b41fd78820f78321772f
+  sha256: cd1f3ad3af9dbff33aef9e7406d2130d624a0bd1d5aa5970fc713a6421165a4e
 
 build:
   number: 0
@@ -18,6 +18,7 @@ requirements:
   host:
     - python >=3.7
     - pip
+    - setuptools
   run:
     - python >=3.7
 
