@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: cd1f3ad3af9dbff33aef9e7406d2130d624a0bd1d5aa5970fc713a6421165a4e
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - setuptools
     - setuptools_scm
   run:
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -31,6 +31,7 @@ test:
     - pip show mplhep_data | grep "{{ version }}"
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/scikit-hep/mplhep_data
